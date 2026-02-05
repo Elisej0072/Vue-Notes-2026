@@ -5,10 +5,10 @@
         <input type="text" v-model="user.username"/>
         <label for="password">Password</label>
         <input type="password" v-model="user.password"/>
-        <button type="submit">Submit</button>
+        <button type="submit">Login</button>
     </form>
-    <h2>Welcome {{ user.username }}</h2>
-    <h2>Please Login</h2>
+    <h2 v-if="loggedIn"> Welcome {{ user.username }}</h2>
+    <h2 v-else>Please Login</h2>
     
   </div>
 </template>
@@ -24,7 +24,6 @@ function login(user) {
 }
 
 
-
 </script>
 
-<style lang="scss" scoped></style>
+<style  scoped></style>

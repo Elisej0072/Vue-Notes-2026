@@ -3,7 +3,7 @@
     <h1>Cookie Clicker</h1>
     <h2>{{ count }}</h2>
     <img @click="increment" src="/cookie.png" alt="" />
-    <button>reset</button>
+     <button type="reset">Reset</button>
   </div>
 </template>
 
