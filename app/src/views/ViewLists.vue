@@ -1,6 +1,8 @@
 <template>
     <div class="container">
-        <AnimalCard v-for="animal in animals" :key="animal.name" :animal="animal">{{ animal.name }}</AnimalCard>
+        <AnimalCard v-for="animal in animals" 
+        :key="animal.name" 
+        :animal="animal">{{ animal.name }}</AnimalCard>
     </div>
 </template>
 
