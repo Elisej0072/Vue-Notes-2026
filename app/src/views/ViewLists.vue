@@ -6,7 +6,7 @@
         <button @click="addToCart(animal)">Click Me</button>
       </AnimalCard>
     
-    <AnimalCard: animal="cjsch"> </AnimalCard>
+    <!-- <AnimalCard: animal="cjsch"> </AnimalCard> -->
     </div>
 </template>
 
