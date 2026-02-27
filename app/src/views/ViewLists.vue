@@ -2,14 +2,21 @@
     <div class="container">
         <AnimalCard v-for="animal in animals" 
         :key="animal.name" 
-        :animal="animal">{{ animal.name }}</AnimalCard>
+        :animal="animal">
+        <button @click="addToCart(animal)">Click Me</button>
+      </AnimalCard>
+    
+    <AnimalCard: animal="cjsch"> </AnimalCard>
     </div>
 </template>
 
 <script>
 import { ref } from 'vue'
-import AnimalCard from '@/components/AnimalCard.vue'
 
+import AnimalCard from '@/components/AnimalCard.vue'
+function addToCart(animal) {
+  console.log(animal)
+}
 const animals = ref([
   { name: 'Leo', species: 'Lion', weight: 420 },
   { name: 'Ella', species: 'Elephant', weight: 5000 },

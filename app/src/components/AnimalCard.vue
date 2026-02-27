@@ -3,6 +3,7 @@
 <h2> {{ animal.name }}</h2>
 <h3>{{ animal.species }}</h3>
     </div>
+    <slot></slot>
 </template>
 
 <script>
