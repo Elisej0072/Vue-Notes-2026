@@ -1,29 +1,29 @@
 <template>
-  <div class="container">
-    <h1>Cookie Clicker</h1>
-    <h2>{{ count }}</h2>
-    <img @click="increment" src="/cookie.png" alt="" />
-     <button type="reset">Reset</button>
+  <div>
+    <PokemonCard v-for="(mon, index) in pokemon" :key="mon.name" 
+    :pokemon="mon" :id="index + 1" />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-const count = ref(0)
-function increment() {
-  count.value++
-}
+ import {ref, onMounted} from 'vue'
+ import PokemonCard from "../components/PokemonCard.vue"
+ const pokemon = ref([])
+ async function getPokemon(){
+  try{
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
+    const data = await response.json()
+    pokemon.value = data.results
+  }
+  catch(error) {
+    console.log(error)
+  }
+ }
+ onMounted(()=> {
+  getPokemon()
+ })
 </script>
 
 <style scoped>
-img {
-  width: 200px;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 40vh;
-}
+
 </style>
