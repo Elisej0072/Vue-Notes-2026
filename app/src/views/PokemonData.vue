@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-    import {onMounted, ref, watch} from 'vue'
+    import {onBeforeMount, ref, watch} from 'vue'
     import {useRoute} from 'vue-router'
     const route = useRoute() 
     const pokemon = ref(null)
@@ -15,7 +15,7 @@
         pokemon.value = data
     }
 
-    onMounted(function(){
+    onBeforeMount(function(){
         getPokemon(route.params.id)
     })
 
